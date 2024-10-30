@@ -1,12 +1,19 @@
+<div align="center">
+
 # AppDev_Milestone2
 
-##Team Name
-#Marcus Sayed Jason
+## Personal Trainers
+### Featuring: Marcus Sayed Jason
 
-#Workout App
+### Workout App
+![App Logo](https://github.com/user-attachments/assets/03ab2f28-cb50-468c-8c80-6343fed77285)
 
-#Description
+### Description
+A workout tracking app to record exercises and display weekly data for users.
 
-#Scope (Specific explanation of the app)
+### Scope
+
 
 ![Design of our Application](temp.png)
+
+</div>
