@@ -29,6 +29,10 @@ After the login/sign in screen, the user is redirected to the home screen which 
 
 <img src="https://github.com/user-attachments/assets/7970e951-16fe-4b1d-8b63-a786698ec4ef" alt="drawing" width="500"/>
 
+##### Note: 
+The AI will be Azure OpenAI Service
+[Azure OpenAI Service](https://azure.microsoft.com/en-ca/products/ai-services/openai-service/)
+
 #### Workout Planner
 
 On the workout planner page, the page will have numerous features including a box to select the date you're doing the workout, a container to write the name of your workout, some drop downs for the sets and reps per workout and an add workout button to do a post request to the database. 
