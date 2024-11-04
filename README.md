@@ -16,6 +16,6 @@ The app starts out in a login/sign in screen which prevents the user from access
 
 ![Design of our Application](temp.png)
 
-[title](https://www.figma.com/design/3mzdCZkvPArN40DGfZJkuE/Milestone-2-proposal?node-id=0-1&node-type=canvas&t=8MJQu4OmHBfcHCTv-0)
+[Layout of the application](https://www.figma.com/design/3mzdCZkvPArN40DGfZJkuE/Milestone-2-proposal?node-id=0-1&node-type=canvas&t=8MJQu4OmHBfcHCTv-0)
 
 </div>
