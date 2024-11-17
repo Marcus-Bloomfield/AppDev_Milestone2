@@ -25,8 +25,16 @@
   - Estimated Time: 1-2 hrs
 - Creating the Add Workout Page
   - Priority: Medium
-  - Estimated Time: 1-2 hrs 
-- 
+  - Estimated Time: 1-2 hrs
+- Creating the View Workout Page
+  - Priority: Medium
+  - Estimated Time: 1-2 hrs
+- Implementing/Using the AI API
+  - Priority: Low
+  - Estimated Time: 2-3 hrs
+- Implementing User Options
+  - Priority: Low
+  - Estimated Time: 1.5-2.5 hrs
 
 
 
