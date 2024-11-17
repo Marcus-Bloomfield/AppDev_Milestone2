@@ -17,15 +17,19 @@
 - Creating/Using the Database
   - Priority: High
   - Estimated Time: 0.5-1 hrs
+  - Issue
 - Creating the Login/Signup Pages
   - Priority: Medium
   - Estimated Time: 1-2 hrs
+  - Issue
 - Creating the Home Page
   - Priority: Medium
   - Estimated Time: 1-2 hrs
+  - Issue
 - Creating the Add Workout Page
   - Priority: Medium
   - Estimated Time: 1-2 hrs
+  - Issue
 - Creating the View Workout Page
   - Priority: Medium
   - Estimated Time: 1-2 hrs
