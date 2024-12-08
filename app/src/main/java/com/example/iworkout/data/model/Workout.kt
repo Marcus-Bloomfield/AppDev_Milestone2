@@ -7,5 +7,5 @@ data class Workout(
     val sets: Int = 0,
     val reps: Int = 0,
     val userId: String = "",
-    val dayId: String = ""
+    val dayId: Int = 0
 )

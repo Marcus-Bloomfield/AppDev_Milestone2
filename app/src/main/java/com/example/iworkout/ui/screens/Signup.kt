@@ -75,22 +75,30 @@ fun SignUp(
                         }
                         return@Button
                     }
+                    if (password.length < 6) {
+                        coroutineScope.launch {
+                            snackbarHostState.showSnackbar("Password must be at least 6 characters long")
+                        }
+                        return@Button
+                    }
 
                     // Sign up the user
-                    val user = User(UUID.randomUUID().toString(),username = username, password = password, name = name)
-                    authViewModel.signUp(user) { success ->
-                        Log.d("SignUp", "Sign-up success: $success")
+                    val user = User(
+                        UUID.randomUUID().toString(),
+                        username = username,
+                        password = password,
+                        name = name
+                    )
+                    authViewModel.signUp(user, password) { success, errorMessage ->
                         if (success) {
-
-                            onLoginNavigate()
                             coroutineScope.launch {
                                 snackbarHostState.showSnackbar("Sign up successful!")
-
                             }
-
+                            onLoginNavigate()
                         } else {
+                            val message = errorMessage ?: "Sign up failed. Try again."
                             coroutineScope.launch {
-                                snackbarHostState.showSnackbar("Sign up failed. Try again.")
+                                snackbarHostState.showSnackbar(message)
                             }
                         }
                     }

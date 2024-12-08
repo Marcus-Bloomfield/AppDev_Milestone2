@@ -29,4 +29,14 @@ class UserRepository {
             }
             .addOnFailureListener { onResult(null) }
     }
+
+    fun getCurrentUserId(username: String, password: String, onResult: (String?) -> Unit) {
+        getUser(username, password) { user ->
+            if (user != null) {
+                onResult(user.userId)
+            } else {
+                onResult(null)
+            }
+        }
+    }
 }

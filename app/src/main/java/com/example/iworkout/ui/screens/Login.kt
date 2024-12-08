@@ -27,10 +27,11 @@ fun Login(
 ) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    val snackbarHostState = remember { SnackbarHostState() } // Use SnackbarHostState directly
+    val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
+
     Scaffold(
-        snackbarHost = { SnackbarHost(hostState = snackbarHostState) } // Attach SnackbarHostState
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -54,13 +55,12 @@ fun Login(
             )
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = {
-                authViewModel.login(username, password) { user ->
-                    if (user != null) {
-                        onLoginSuccess()
+                authViewModel.login(username, password) { success ->
+                    if (success) {
+                        onLoginSuccess()  // Navigate to the home screen on success
                     } else {
-
                         coroutineScope.launch {
-                            snackbarHostState.showSnackbar("Invalid credentials")
+                            snackbarHostState.showSnackbar("Invalid username or password")
                         }
                     }
                 }

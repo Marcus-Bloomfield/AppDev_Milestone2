@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import com.example.iworkout.ui.screens.Login
 import com.example.iworkout.ui.screens.SignUp
 import com.example.iworkout.ui.screens.Home
+import com.example.iworkout.ui.screens.AddWorkout
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -19,7 +20,11 @@ fun NavGraph(navController: NavHostController) {
             SignUp(onLoginNavigate = { navController.navigate("login") })
         }
         composable("home") {
-            Home()
+            Home(navController)
         }
+        composable(route = "add_workout") {
+            AddWorkout(onWorkoutSuccess = { navController.navigate("home") } )
+        }
+
     }
 }
