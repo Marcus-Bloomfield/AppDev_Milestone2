@@ -34,6 +34,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.iworkout.viewmodel.AuthViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.example.iworkout.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -94,16 +95,16 @@ fun WorkoutGrid() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            WorkoutCard("Workout 1", android.R.drawable.ic_menu_gallery)
-            WorkoutCard("Workout 2", android.R.drawable.ic_menu_gallery)
+            WorkoutCard("Person JumpRoping", R.drawable.ropeskippinh)
+            WorkoutCard("Person Squatting", R.drawable.personsquatting)
         }
         Spacer(modifier = Modifier.height(8.dp))
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            WorkoutCard("Workout 3", android.R.drawable.ic_menu_gallery)
-            WorkoutCard("Workout 4", android.R.drawable.ic_menu_gallery)
+            WorkoutCard("Person Meditating",R.drawable.meditation)
+            WorkoutCard("Person doing pull ups", R.drawable.pullups)
         }
     }
 }
@@ -120,19 +121,9 @@ fun WorkoutCard(title: String, imageRes: Int) {
         Box {
             Image(
                 painter = painterResource(id = imageRes),
-                contentDescription = null,
+                contentDescription = title,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
-            )
-            Text(
-                text = title,
-                color = Color.White,
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .padding(8.dp),
-                textAlign = TextAlign.Center,
-                fontSize = 16.sp,
-                style = MaterialTheme.typography.headlineMedium
             )
         }
     }

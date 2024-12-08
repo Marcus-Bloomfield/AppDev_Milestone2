@@ -60,7 +60,7 @@ fun Login(
 
             // Logo
             Image(
-                painter = painterResource(id = R.drawable.logo), // Replace with your logo resource ID
+                painter = painterResource(id = R.drawable.logo),
                 contentDescription = "App Logo",
                 modifier = Modifier
                     .size(178.dp)
