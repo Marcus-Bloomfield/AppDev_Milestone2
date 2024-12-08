@@ -18,6 +18,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,7 +30,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.example.iworkout.viewmodel.AuthViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,13 +65,19 @@ fun Home(navController: NavHostController) {
 }
 
 @Composable
-fun HeaderSection(navController: NavHostController) {
+fun HeaderSection(navController: NavHostController, authViewModel: AuthViewModel = viewModel()) {
+    val userId = FirebaseAuth.getInstance().currentUser?.uid
+    var Name by remember { mutableStateOf<String?>(null) }
+    authViewModel.fetchName(userId) { name ->
+        Name = name}
+
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "Hello User",
+            text = "Hello $Name",
             style = MaterialTheme.typography.headlineLarge,
             modifier = Modifier.weight(1f)
         )

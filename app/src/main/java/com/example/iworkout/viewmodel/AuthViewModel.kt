@@ -10,6 +10,10 @@ class AuthViewModel : ViewModel() {
 
     private val userRepository = UserRepository()
 
+    fun fetchName(userId: String?, onResult: (String?) -> Unit) {
+        userRepository.fetchName(userId, onResult)
+    }
+
     fun signUp(user: User, password: String, onComplete: (Boolean, String?) -> Unit) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(user.username + "@example.com", password)
             .addOnCompleteListener { task ->

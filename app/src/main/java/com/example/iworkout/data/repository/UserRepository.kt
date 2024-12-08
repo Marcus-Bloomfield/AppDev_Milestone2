@@ -14,6 +14,22 @@ class UserRepository {
             .addOnSuccessListener { onComplete(true) }
             .addOnFailureListener { onComplete(false) }
     }
+    fun fetchName(userId: String?, onResult: (String?) -> Unit) {
+        if (userId != null) {
+            db.collection("users").document(userId).get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        val name = document.getString("name")
+                        onResult(name) // Pass the name back to the ViewModel
+                    } else {
+                        onResult(null) // Document does not exist
+                    }
+                }
+                .addOnFailureListener {
+                    onResult(null) // Handle failure
+                }
+        }
+    }
 
     fun getUser(username: String, password: String, onResult: (User?) -> Unit) {
         db.collection("users")
